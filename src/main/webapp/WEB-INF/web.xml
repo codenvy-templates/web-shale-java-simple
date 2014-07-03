@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee                               http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <!-- Display name for this application -->
+    <display-name>Shale Blank Starter App</display-name>
+
+    <!-- Select JSF State Saving Mode -->
+    <context-param>
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+        <param-value>client</param-value>
+    </context-param>
+
+    <!-- JSF Configuration Resources (comma-separated list) -->
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/WEB-INF/faces-config.xml</param-value>
+    </context-param>
+
+    <!-- Commons Chain Configuration Resources -->
+    <context-param>
+        <param-name>org.apache.commons.chain.CONFIG_WEB_RESOURCE</param-name>
+        <param-value>/WEB-INF/chain-config.xml</param-value>
+    </context-param>
+
+    <!-- Dialog Configuration Resources (comma-separated list) -->
+    <context-param>
+        <param-name>org.apache.shale.dialog.CONFIGURATION</param-name>
+        <param-value>/WEB-INF/dialog-config.xml</param-value>
+    </context-param>
+
+    <!-- Shale Application Controller Filter -->
+    <filter>
+        <filter-name>shale</filter-name>
+        <filter-class>
+            org.apache.shale.application.faces.ShaleApplicationFilter
+        </filter-class>
+    </filter>
+
+    <!-- Shale Application Controller Filter Mapping -->
+    <filter-mapping>
+        <filter-name>shale</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
+    <!-- Commons Chain Configuration Listener -->
+    <listener>
+        <listener-class>
+            org.apache.commons.chain.web.ChainListener
+        </listener-class>
+    </listener>
+
+    <!-- JavaServer Faces Servlet Configuration -->
+    <servlet>
+        <servlet-name>faces</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- JavaServer Faces Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>faces</servlet-name>
+        <url-pattern>*.faces</url-pattern>
+    </servlet-mapping>
+
+    <!-- Welcome File List -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>

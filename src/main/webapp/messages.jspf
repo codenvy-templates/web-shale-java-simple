@@ -1,0 +1,1 @@
+<f:loadBundle var="messages" basename="org.apache.shale.blank.Bundle"/>
