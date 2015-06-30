@@ -1,1 +1,1 @@
-<f:loadBundle var="messages" basename="org.apache.shale.blank.Bundle"/>
+<f:loadBundle var="messages" basename="com.codenvy.example.shale.Bundle"/>
