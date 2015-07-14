@@ -16,7 +16,8 @@
     <properties>
         <shale.version>1.0.5</shale.version>
         <commons-logging.version>1.1</commons-logging.version>
-        <javax.servlet.version>1.1.2</javax.servlet.version>
+        <javax.servlet.jstl.version>1.1.2</javax.servlet.jstl.version>
+        <javax.servlet.api.version>3.1.0</javax.servlet.api.version>
         <junit.version>3.8.1</junit.version>
         <taglibs.version>1.1.2</taglibs.version>
     </properties>
@@ -27,6 +28,12 @@
             <groupId>commons-digester</groupId>
             <artifactId>commons-digester</artifactId>
             <version>1.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet.api.version}</version>
         </dependency>
 
         <dependency>
@@ -73,7 +80,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-            <version>${javax.servlet.version}</version>
+            <version>${javax.servlet.jstl.version}</version>
         </dependency>
 
         <dependency>
